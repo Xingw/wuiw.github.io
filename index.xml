@@ -20,29 +20,14 @@
       <description>Hugo官方主页：https://gohugo.io/
 Hugo二进制下载地址：https://github.com/spf13/hugo/releases
  下载下来后，只有一个叫hugo或者hugo.exe的程序，接下来开始生成自己的站点：
-&amp;gt; hugo new site mysite
+hugo new site mysite
 然后hugo会自动生成这样一个目录结构：
-&amp;gt; ▸ archetypes/
-&amp;gt; ▸ content/
-&amp;gt; ▸ layouts/
-&amp;gt; ▸ static/
-config.toml
-创建页面：
-&amp;gt; $ hugo new about.md
-如果是博客日志，最好将md文件放在content的post目录里： &amp;gt; $ hugo new post/first.md
+ ▸ archetypes/ ▸ content/ ▸ layouts/ ▸ static/ config.toml  创建页面：
+$ hugo new about.md
+如果是博客日志，最好将md文件放在content的post目录里： $ hugo new post/first.md
 执行完后，会在content/post目录自动生成一个MarkDown格式的first.md文件：
- +++
-date = &amp;ldquo;2015-01-08T08:36:54-07:00&amp;rdquo;
-draft = true
-title = &amp;ldquo;first&amp;rdquo;
-+++
- 在下面可以写文章的内容，如:
-&amp;gt; +++
-&amp;gt; date = &amp;ldquo;2015-01-08T08:36:54-07:00&amp;rdquo;
-&amp;gt; draft = true
-&amp;gt; title = &amp;ldquo;first&amp;rdquo;
-&amp;gt; &amp;gt; +++
-&amp;gt; &amp;gt;### Hello Hugo</description>
+ +++ date = &amp;quot;2015-01-08T08:36:54-07:00&amp;quot; draft = true title = &amp;quot;first&amp;quot; +++  在下面可以写文章的内容，如:
+ +++ date = &amp;quot;2015-01-08T08:36:54-07:00&amp;quot; draft = true title = &amp;quot;first&amp;quot; +++ ### Hello Hugo 1. aaa 1. bbb 1. ccc  下载模板</description>
     </item>
     
     <item>

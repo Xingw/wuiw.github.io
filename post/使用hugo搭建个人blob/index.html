@@ -56,53 +56,60 @@ Hugo二进制下载地址：<a href="https://github.com/spf13/hugo/releases">htt
 </blockquote>
 
 <p>下载下来后，只有一个叫hugo或者hugo.exe的程序，接下来开始生成自己的站点：<br />
-&gt; hugo new site mysite</p>
+<code>hugo new site mysite</code></p>
 
-<p>然后hugo会自动生成这样一个目录结构：<br />
-&gt;  ▸ archetypes/<br />
-&gt;  ▸ content/<br />
-&gt;  ▸ layouts/<br />
-&gt;  ▸ static/<br />
-    config.toml</p>
+<p>然后hugo会自动生成这样一个目录结构：</p>
+
+<pre><code> ▸ archetypes/  
+ ▸ content/  
+ ▸ layouts/  
+ ▸ static/  
+   config.toml
+</code></pre>
 
 <p>创建页面：<br />
-&gt; $ hugo new about.md</p>
+<code>$ hugo new about.md</code></p>
 
 <p>如果是博客日志，最好将md文件放在content的post目录里：
-&gt; $ hugo new post/first.md</p>
+<code>$ hugo new post/first.md</code></p>
 
 <p>执行完后，会在content/post目录自动生成一个MarkDown格式的first.md文件：</p>
 
-<blockquote>
-<p>+++<br />
-date = &ldquo;2015-01-08T08:36:54-07:00&rdquo;<br />
-draft = true<br />
-title = &ldquo;first&rdquo;</p>
+<pre><code> +++  
+ date = &quot;2015-01-08T08:36:54-07:00&quot;  
+ draft = true  
+ title = &quot;first&quot;  
+  
+ +++  
+</code></pre>
 
-<p>+++</p>
-</blockquote>
+<p>在下面可以写文章的内容，如:</p>
 
-<p>在下面可以写文章的内容，如:<br />
-&gt; +++<br />
-&gt; date = &ldquo;2015-01-08T08:36:54-07:00&rdquo;<br />
-&gt; draft = true<br />
-&gt; title = &ldquo;first&rdquo;<br />
-&gt;
-&gt; +++<br />
-&gt;
-&gt;### Hello Hugo<br />
-&gt;<br />
-&gt; 1. aaa<br />
-&gt; 1. bbb<br />
-&gt; 1. ccc</p>
+<pre><code> +++   
+ date = &quot;2015-01-08T08:36:54-07:00&quot;  
+ draft = true    
+ title = &quot;first&quot;  
 
-<p>下载模板
-&gt; $ cd themes<br />
-&gt; $ git clone <a href="https://github.com/spf13/hyde.git">https://github.com/spf13/hyde.git</a></p>
+ +++  
 
-<p>启动本地调试：
-&gt; $ hugo server &ndash;theme=hyde &ndash;buildDrafts &ndash;watch<br />
-&gt; 浏览器里打开：<a href="http://127.0.0.1:1313">http://127.0.0.1:1313</a></p>
+### Hello Hugo  
+  
+ 1. aaa  
+ 1. bbb  
+ 1. ccc  
+</code></pre>
+
+<p>下载模板</p>
+
+<pre><code> $ cd themes  
+ $ git clone https://github.com/spf13/hyde.git  
+</code></pre>
+
+<p>启动本地调试：</p>
+
+<pre><code> $ hugo server --theme=hyde --buildDrafts --watch  
+ 浏览器里打开：http://127.0.0.1:1313  
+</code></pre>
 
 <p><img src="http://7xlx3k.com1.z0.glb.clouddn.com/HugoFirstPost.png-w" alt="image" /></p>
 
@@ -113,15 +120,17 @@ title = &ldquo;first&rdquo;</p>
 <p>在GitHub上创建一个Repository，命名为：<code>xingw.github.io</code></p>
 
 <p>在站点根目录执行 Hugo 命令生成最终页面：<br />
-&gt; $ hugo &ndash;theme=hyde &ndash;baseUrl=&ldquo;<a href="http://xingw.github.io/&quot;">http://xingw.github.io/&quot;</a></p>
+<code>$ hugo --theme=hyde --baseUrl=&quot;http://xingw.github.io/&quot;</code></p>
 
-<p>静态页面会生成到public文件目录下，进入public目录，将其作为git上的代码本地仓库上传到git上面<br />
-&gt; $ cd public<br />
-&gt; $ git init<br />
-&gt; $ git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a><br />
-&gt; $ git add -A<br />
-&gt; $ git commit -m &ldquo;first commit&rdquo;<br />
-&gt; $ git push -u origin master</p>
+<p>静态页面会生成到public文件目录下，进入public目录，将其作为git上的代码本地仓库上传到git上面</p>
+
+<pre><code> $ cd public  
+ $ git init  
+ $ git remote add origin https://github.com/coderzh/coderzh.github.io.git  
+ $ git add -A  
+ $ git commit -m &quot;first commit&quot;  
+ $ git push -u origin master  
+</code></pre>
 
 <p>浏览器里访问：<code>http://xingw.github.io/</code></p>
 
