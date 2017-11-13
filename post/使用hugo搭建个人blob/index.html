@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.30.2" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>使用Hugo搭建个人Blog &middot; My New Hugo Site</title>
+
+  
+  <link rel="stylesheet" href="http://xingw.github.io/css/print.css" media="print">
+  <link rel="stylesheet" href="http://xingw.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://xingw.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://xingw.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+</head>
+
+  <body class=" ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://xingw.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://xingw.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>使用Hugo搭建个人Blog</h1>
+  <span class="post-date">Mon, Oct 30, 2017</span>
+  
+
+<h1 id="使用hugo搭建个人blog">使用Hugo搭建个人Blog</h1>
+
+<blockquote>
+<p>Hugo官方主页：<a href="https://gohugo.io/">https://gohugo.io/</a><br />
+Hugo二进制下载地址：<a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
+</blockquote>
+
+<p>下载下来后，只有一个叫hugo或者hugo.exe的程序，接下来开始生成自己的站点：
+&gt;hugo new site mysite</p>
+
+<p>然后hugo会自动生成这样一个目录结构：
+&gt; ▸ archetypes/<br />
+  ▸ content/<br />
+  ▸ layouts/<br />
+  ▸ static/<br />
+    config.toml</p>
+
+<p>创建页面：
+&gt;$ hugo new about.md</p>
+
+<p>如果是博客日志，最好将md文件放在content的post目录里：
+&gt;$ hugo new post/first.md</p>
+
+<p>执行完后，会在content/post目录自动生成一个MarkDown格式的first.md文件：</p>
+
+<blockquote>
+<p>+++<br />
+date = &ldquo;2015-01-08T08:36:54-07:00&rdquo;<br />
+draft = true<br />
+title = &ldquo;first&rdquo;</p>
+
+<p>+++</p>
+</blockquote>
+
+<p>在下面可以写文章的内容，如:
+&gt;+++<br />
+date = &ldquo;2015-01-08T08:36:54-07:00&rdquo;<br />
+draft = true<br />
+title = &ldquo;first&rdquo;<br />
+&gt;
+&gt;+++
+&gt;
+&gt;### Hello Hugo
+&gt;
+&gt; 1. aaa
+&gt; 1. bbb
+&gt; 1. ccc</p>
+
+<p>下载模板
+&gt;$ cd themes<br />
+$ git clone <a href="https://github.com/spf13/hyde.git">https://github.com/spf13/hyde.git</a></p>
+
+<p>启动本地调试：
+&gt;$ hugo server &ndash;theme=hyde &ndash;buildDrafts &ndash;watch<br />
+浏览器里打开：<a href="http://127.0.0.1:1313">http://127.0.0.1:1313</a></p>
+
+<p><img src="http://7xlx3k.com1.z0.glb.clouddn.com/HugoFirstPost.png-w" alt="image" /></p>
+
+<p>–watch或者-w 选项打开的话，将会监控到文章的改动从而自动去刷新浏览器</p>
+
+<h1 id="部署到git上">部署到git上</h1>
+
+<p>在GitHub上创建一个Repository，命名为：<code>xingw.github.io</code></p>
+
+<p>在站点根目录执行 Hugo 命令生成最终页面：
+&gt;$ hugo &ndash;theme=hyde &ndash;baseUrl=&ldquo;<a href="http://xingw.github.io/&quot;">http://xingw.github.io/&quot;</a></p>
+
+<p>静态页面会生成到public文件目录下，进入public目录，将其作为git上的代码本地仓库上传到git上面
+&gt;$ cd public<br />
+$ git init<br />
+$ git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a><br />
+$ git add -A<br />
+$ git commit -m &ldquo;first commit&rdquo;<br />
+$ git push -u origin master</p>
+
+<p>浏览器里访问：<a href="http://xingw.github.io/">http://xingw.github.io/</a></p>
+
+<p>注：本地新创建的md文件<code>draft = true</code>代表是草稿文件，生成public文件时会忽略掉这些草稿文件进行上传，所以如果要在网络上可见，需修改为<code>draft=false</code></p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>
