@@ -55,8 +55,8 @@
 Hugo二进制下载地址：<a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
 </blockquote>
 
-<p>下载下来后，只有一个叫hugo或者hugo.exe的程序，接下来开始生成自己的站点：
-&gt;hugo new site mysite</p>
+<p>下载下来后，只有一个叫hugo或者hugo.exe的程序，接下来开始生成自己的站点：<br />
+&gt; hugo new site mysite</p>
 
 <p>然后hugo会自动生成这样一个目录结构：<br />
 &gt;  ▸ archetypes/<br />
@@ -113,17 +113,17 @@ title = &ldquo;first&rdquo;</p>
 <p>在GitHub上创建一个Repository，命名为：<code>xingw.github.io</code></p>
 
 <p>在站点根目录执行 Hugo 命令生成最终页面：<br />
-&gt;$ hugo &ndash;theme=hyde &ndash;baseUrl=&ldquo;<a href="http://xingw.github.io/&quot;">http://xingw.github.io/&quot;</a></p>
+&gt; $ hugo &ndash;theme=hyde &ndash;baseUrl=&ldquo;<a href="http://xingw.github.io/&quot;">http://xingw.github.io/&quot;</a></p>
 
 <p>静态页面会生成到public文件目录下，进入public目录，将其作为git上的代码本地仓库上传到git上面<br />
-&gt;$ cd public<br />
-&gt;$ git init<br />
-&gt;$ git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a><br />
-&gt;$ git add -A<br />
-&gt;$ git commit -m &ldquo;first commit&rdquo;<br />
-&gt;$ git push -u origin master</p>
+&gt; $ cd public<br />
+&gt; $ git init<br />
+&gt; $ git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a><br />
+&gt; $ git add -A<br />
+&gt; $ git commit -m &ldquo;first commit&rdquo;<br />
+&gt; $ git push -u origin master</p>
 
-<p>浏览器里访问：<a href="http://xingw.github.io/">http://xingw.github.io/</a></p>
+<p>浏览器里访问：<code>http://xingw.github.io/</code></p>
 
 <p>注：本地新创建的md文件<code>draft = true</code>代表是草稿文件，生成public文件时会忽略掉这些草稿文件进行上传，所以如果要在网络上可见，需修改为<code>draft=false</code></p>
 
